@@ -1,5 +1,4 @@
 # Todo List
-====================
 
 In this challenge we're going to create a basic CRUD app with just a single
 record type so that you can focus on practicing the basic actions for a CRUDdy
