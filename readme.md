@@ -25,7 +25,7 @@ Start by creating a new virtual environment and then activate it.
 
 Once you have your virtual environment up and running you can tell pip to download all the requirements for this app by running `pip install -r requirements.txt`. Make sure you are in the main directory of the repo (the one with the readme in it).
 
-Create your project, app, models and get started! Let's say a `Todo` item has a title, description, and due_date to start. Feel free to add anything else you feel is crucial for a `Todo` to have. Next, let's start CRUD!
+Create your project, app, models and get started! Let's say a `Todo` item has a title and description. Feel free to add anything else you feel is crucial for a `Todo` to have. Next, let's start CRUD!
 
 ## Release 1: Create
 Since we need a way to get records into our system, we'll start with the routes to create new records.
