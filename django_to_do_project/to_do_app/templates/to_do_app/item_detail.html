@@ -1,0 +1,9 @@
+{% extends 'to_do_app/index.html' %}
+{% block title %}Item Detail{% endblock %}
+{% block div %}
+    {% for i in items %}
+        {% if i.id == myKey %}
+         <h1>Item Title: {{i.name}} <br>Item Description: {{i.description}}</h1>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
