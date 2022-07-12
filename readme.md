@@ -20,8 +20,8 @@ This challenge is empty for you to practice building something from scratch. The
 
 Start by creating a new virtual environment and then activate it. 
 
-`python -m venv venv source venv/bin/activate`
-`source venv/bin/activate`
+`python -m venv ~/venvs/to-do-env`
+`source ~/venvs/to-do-env/bin/activate`
 
 Once you have your virtual environment up and running you can tell pip to download all the requirements for this app by running `pip install -r requirements.txt`. Make sure you are in the main directory of the repo (the one with the readme in it).
 
