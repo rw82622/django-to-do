@@ -5,14 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Home{% endblock %}</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
 </head>
 <body>
     {% block div %}
+    <div style="margin: 20px">
+    <a href="new"><button class="btn btn-primary">New Item</button></a>
+    <h1>To do List Items:</h1>
     <ul>
         {% for i in items %}
-        <a href="/"><li>{{i.name}}</li></a>
+        <a href="/todos/{{i.id}}"><li>{{i.name}}</li></a>
         {% endfor %}
     </ul>
+    </div>
     {% endblock %}
 </body>
 </html>

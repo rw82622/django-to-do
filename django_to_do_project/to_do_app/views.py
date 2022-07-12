@@ -14,6 +14,19 @@ def new_to_do(request):
         desc = request.POST.get('description')
         item = Item(name=title, description=desc)
         item.save()
-        data = {'items': Item.objects.all(), 'myKey': item.id}
+        data = {'item': item}
         return render(request, 'to_do_app/item_detail.html', data)
+    
+def details(request, id):
+    current_item = Item.objects.get(id=id)
+    return render(request, 'to_do_app/item_detail.html', {'item': current_item})
+
+def edit(request, id):
+    current_item = Item.objects.get(id=id)
+    if request.method == 'GET':
+        return render(request, 'to_do_app/edit_item.html', {'item': current_item})
+    elif request.method == 'POST':
+        title = request.POST.get('title')
+        desc = request.POST.get('description')
+        item = Item(name=title, description=desc)
 
