@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, reverse
 from .models import Item
 
 # Create your views here.
@@ -28,5 +28,13 @@ def edit(request, id):
     elif request.method == 'POST':
         title = request.POST.get('title')
         desc = request.POST.get('description')
-        item = Item(name=title, description=desc)
+        current_item.name=title
+        current_item.description=desc
+        current_item.save()
+        data = {'item': current_item}
+        return render(request, 'to_do_app/item_detail.html', data)
 
+def delete_item(request, id):
+    current_item = Item.objects.get(id=id)
+    current_item.delete()
+    return redirect(reverse('home'))

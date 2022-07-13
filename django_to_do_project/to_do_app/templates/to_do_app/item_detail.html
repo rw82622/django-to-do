@@ -1,5 +1,12 @@
 {% extends 'to_do_app/index.html' %}
 {% block title %}Item Detail{% endblock %}
 {% block div %}
-    <h1>Item Title: {{item.name}} <br>Item Description: {{item.description}}</h1>
+<div style="margin: 20px">
+    <h3>Item Title: {{item.name}} <br>Item Description: {{item.description}}</h3>
+    <div>
+        <a href="/todos/{{item.id}}/edit"><button class="btn btn-primary">Edit</button></a>
+        <a href="/todos/{{item.id}}/delete"><button class="btn btn-danger">Delete</button></a>
+        
+    </div>
+</div>
 {% endblock %}
