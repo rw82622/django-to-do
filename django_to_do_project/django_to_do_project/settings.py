@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'django_to_do_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'to_do_list',
+        'NAME': 'tasks_db',
     }
 }
 
@@ -125,3 +125,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'to_do_app.TheUser'
