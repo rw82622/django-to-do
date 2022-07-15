@@ -1,7 +1,8 @@
 {% extends 'to_do_app/index.html' %}
 {% block title %}New Item{% endblock %}
 {% block div %}
-<form method="POST" style="width: 30%; padding-top: 20px; margin-left: 20px">
+<h1>Add New Item</h1>
+<form method="POST" class="myForm">
     {% csrf_token %}
     <label for="name">Item Title</label>
     <input type="text" name="title" placeholder="Title" {% block val %}{% endblock %} class="form-control" required/>

@@ -11,18 +11,22 @@ def sign_up(request):
     elif request.method == 'GET':
         return render(request, 'to_do_app/sign_up.html')
     elif request.method == 'POST':
-        firstName = request.POST['firstName']
-        lastName = request.POST['lastName']
-        user_email = request.POST['email']
-        userName = request.POST['userName']
-        user_password = request.POST['password']
-        TheUser.objects.create_user(
-            username=userName,
-            password=user_password,
-            email = user_email,
-            first_name=firstName,
-            last_name=lastName)
-        return redirect('home')
+        try:
+            body = request.POST
+            firstName = body['firstName']
+            lastName = body['lastName']
+            user_email = body['email']
+            userName = body['userName']
+            user_password = body['password']
+            TheUser.objects.create_user(
+                username=userName,
+                password=user_password,
+                email = user_email,
+                first_name=firstName,
+                last_name=lastName)
+            return redirect('home')
+        except:
+            return render(request, 'to_do_app/sign_up.html', {'msg': "Username already exists"})
 
 @login_required(login_url='log_in')        
 def index(request):
@@ -85,4 +89,4 @@ def edit(request, id):
 def delete_item(request, id):
     current_item = Item.objects.get(id=id)
     current_item.delete()
-    return redirect(reverse('home'))
+    return redirect('home')

@@ -1,7 +1,7 @@
 {% extends 'to_do_app/index.html' %}
 {% block title %}Item Detail{% endblock %}
 {% block div %}
-<div style="margin: 20px">
+<div class="mainPage">
     <h3>Item Title: {{item.name}} <br>Item Description: {{item.description}}</h3>
     <div>
         <a href="/todos/{{item.id}}/edit"><button class="btn btn-primary">Edit</button></a>

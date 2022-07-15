@@ -1,7 +1,7 @@
 {% extends 'to_do_app/index.html' %}
 {% block title %}Log In{% endblock %}
 {% block div %}
-<form method="POST" style="width: 30%; padding-top: 20px; margin-left: 20px">
+<form method="POST" class="myForm">
     {% csrf_token %}
     <h3 style="text-align: center">Log In</h3>
     <label for="userName">User Name</label>
@@ -14,5 +14,11 @@
     <p>{{msg}}</p>
     {% endif %}
     <button type="submit" class="btn btn-primary">Log In</button>
+    <br />
+    <div>
+        <p>Don't have an account yet? <br>
+            <a href="sign-up">Create An Account</a>
+        </p>
+    </div>
 </form>
 {% endblock %}
